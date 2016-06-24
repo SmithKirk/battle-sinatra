@@ -1,4 +1,4 @@
-feature 'reduce HP when attacked' do
+feature 'Reduce HP when attacked' do
   # As Player 1,
   # So I can start to win a game of Battle,
   # I want my attack to reduce Player 2's HP by 10
