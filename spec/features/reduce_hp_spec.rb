@@ -2,6 +2,10 @@ feature 'Reduce HP when attacked' do
   # As Player 1,
   # So I can start to win a game of Battle,
   # I want my attack to reduce Player 2's HP by 10
+  before do
+      allow(Kernel).to receive(:rand).and_return(1)
+    end
+
   scenario 'reduce Player 2 HP by 1' do
     sign_in_and_play
     attack_and_confirm
