@@ -18,8 +18,6 @@ describe Game do
   describe '#current_turn' do
     it 'starts as player 1' do
       expect(game.current_turn).to eq player_1
-      puts game.current_turn
-
     end
   end
 
