@@ -4,7 +4,16 @@ feature 'Attack' do
   # I want to attack Player 2, and I want to get a confirmation
   scenario 'attack player 2' do
     sign_in_and_play
-    click_link 'Attack'
+    click_button 'Attack'
+    
     expect(page).to have_content 'John attacked Mary'
+  end
+
+  scenario 'be attacked by player 2' do
+    sign_in_and_play
+    click_button 'Attack'
+    click_button 'OK'
+    click_button 'Attack'
+    expect(page).to have_content 'Mary attacked John'
   end
 end

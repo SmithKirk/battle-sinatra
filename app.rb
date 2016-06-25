@@ -23,9 +23,13 @@ class MyApp < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.player_1.attack(@game.player_2)
-    @game.switch_turns
+    @game.attack(@game.opponent_of(@game.current_turn))
     erb :attack
+  end
+
+  post '/switch-turns' do
+    $game.switch_turns
+    redirect '/play'
   end
 
 
